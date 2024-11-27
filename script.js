@@ -3,17 +3,13 @@ function calcularDescuento(fechaVencimiento) {
     const diferenciaMilisegundos = new Date(fechaVencimiento) - hoy;
     const diferenciaDias = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
 
-    if (diferenciaDias >= 30) {
-        return 0.30;
-    } else if (diferenciaDias >= 15) {
-        return 0.40;
-    } else if (diferenciaDias >= 7) {
-        return 0.50;
-    } else if (diferenciaDias >= 0) {
-        return 0.70;
-    } else {
-        return 0.70;
-    }
+    if (diferenciaDias > 45) 
+        { return 'sin_descuento'; } 
+    else if (diferenciaDias >= 30) { return 0.30; } 
+    else if (diferenciaDias >= 15) { return 0.40; } 
+    else if (diferenciaDias >= 7) { return 0.50; } 
+    else if (diferenciaDias >= 0) { return 0.70; } 
+    else { return 0.70; }
 }
 
 function calcularPrecioFinal(precio, descuento) {
